@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prashanth Kumar - Android & Web Developer</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            background-image: linear-gradient(120deg, #fdfbfb 0%, #c8e7f7 100%);
+
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto 1fr 1fr;
+            height: 100vh;
+        }
+        .top-left {
+            grid-column: 1;
+            grid-row: 1;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px;
+        }
+        .top-right {
+            grid-column: 2;
+            grid-row: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 20px;
+        }
+        .center {
+            grid-column: 1 / span 2;
+            grid-row: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .bottom-left {
+            grid-column: 1;
+            grid-row: 3;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            padding: 20px;
+        }
+        .bottom-right {
+            grid-column: 2;
+            grid-row: 3;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            padding: 20px;
+        }
+        .nav-item {
+            margin: 0 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .content {
+            display: none;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* background-color: rgb(180, 237, 243); */
+            background-image: linear-gradient(120deg, #fdfbfb 0%, #7fcaf0 100%);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+        .active {
+            display: block;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-left">
+            <span class="nav-item" onclick="showContent('home')">Home</span>
+            <span class="nav-item" onclick="showContent('about')">About</span>
+        </div>
+        <div class="top-right">
+            <span class="nav-item" onclick="showContent('skills')">Skills</span>
+            <span class="nav-item" onclick="showContent('education')">Education</span>
+        </div>
+        <div class="center">
+            <img src="imag/imag.png" alt="Prashanth Kumar">
+            <h1>Prashanth Kumar</h1>
+            <p>Android Developer & Web Developer</p>
+        </div>
+        <div class="bottom-left">
+            <span class="nav-item" onclick="showContent('work')">Work</span>
+        </div>
+        <div class="bottom-right">
+            <span class="nav-item" onclick="showContent('contact')">Contact</span>
+        </div>
+    </div>
+
+    <div id="home" class="content">
+        <h2>Welcome to My Portfolio</h2>
+        <p>I'm Prashanth Kumar, a passionate Android and Web Developer.</p>
+    </div>
+
+    <div id="about" class="content">
+        <h2>About Me</h2>
+        <p>I specialize in Android development and Web development.</p>
+        <p>Skilled Software Implementation Engineer with experience developing Android apps and websites, primarily for POS devices that include fingerprint scanners, printers, and card readers for Payment transaction.</p>
+        <p>Cerified Full Stack Development,J Spider Basanagudi Bengaluru</p>
+    </div>
+
+    <div id="skills" class="content">
+        <h2>My Skills</h2>
+        <ul>
+            <li>Java</li>
+            <li>XML</li>
+            <li>Flutter</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+    </div>
+
+    <div id="education" class="content">
+        <h2>Education</h2>
+        <h3>ECE</h3>
+        <p>Guru Nanak Dev Engineering College, VTU Bidar Karnataka</p>
+    </div>
+
+    <div id="work" class="content">
+        <h2>My Work</h2>
+        <h3>Leopard App:</h3>
+        <p>Worked on application development side Implemented fingerprint, Printer,Card Read using Prowess SDK API with Java,XML.</p>
+        <h3>UniPOS DemoApp:</h3>
+        <p>Worked on application development side Implemented fingerprint, Printer,Card Read using UniPOS SDK API with java,xml.</p>
+        <h3>Bloomkpsc Website:</h3>
+        <p>Worked on full website development using Html,Css,Javascript.</p>
+        <h3>Leopard and UniPOS Hybrid APP's:</h3>
+        <p>Worked on development of Hybrid app using flutter ,app having feature Fingerprint scanner,Printer,Cardread</p>
+    </div>
+
+    <div id="contact" class="content">
+        <h2>Contact Me</h2>
+        <p><img src="imag/gmail_5968534.png" alt="Gmail" class="icon"> Gmail: prashanthkm711@gmail.com</p>
+        <p><img src="imag/linkedin_2504923.png" alt="LinkedIn" class="icon"> LinkedIn: Prashanth Kumar M</p>
+        <p><img src="imag/instagram_2111463.png" alt="Instagram" class="icon"> Instagram: prashant_k_m</p>
+    </div>
+
+    <script>
+        function showContent(id) {
+            const contents = document.getElementsByClassName('content');
+            for (let content of contents) {
+                content.classList.remove('active');
+            }
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</body>
+</html>
